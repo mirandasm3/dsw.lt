@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const galleryImages = document.querySelectorAll("#gallery img");
-    const prevButton = document.querySelector(".prev-button");
-    const nextButton = document.querySelector(".next-button");
+    const prevButton = document.querySelector(".here_button");
+    const nextButton = document.querySelector(".next_button");
     let currentImageIndex = 0;
 
-    // Función para mostrar la imagen actual y ocultar las demás
     function showCurrentImage() {
         galleryImages.forEach((image, index) => {
             if (index === currentImageIndex) {
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Función para avanzar a la siguiente imagen
     function nextImage() {
         currentImageIndex++;
         if (currentImageIndex >= galleryImages.length) {
@@ -24,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
         showCurrentImage();
     }
 
-    // Función para retroceder a la imagen anterior
     function prevImage() {
         currentImageIndex--;
         if (currentImageIndex < 0) {
@@ -33,10 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
         showCurrentImage();
     }
 
-    // Agregar eventos de clic a los botones de navegación
     nextButton.addEventListener("click", nextImage);
     prevButton.addEventListener("click", prevImage);
 
-    // Mostrar la primera imagen al cargar la página
     showCurrentImage();
 });
